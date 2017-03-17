@@ -29,15 +29,51 @@ User.create([
 	{username: 'mjmontero', role: :student}
 	])
 
+user_mj = User.find_by(username: 'mjmontero')
+user_student = User.find_by(username: 'student')
+hw1 = Homework.find_by(title: 'Homework 1')
+hw2 = Homework.find_by(title: 'Homework 2')
+hw3 = Homework.find_by(title: 'Homework 3')
+hw4 = Homework.find_by(title: 'Homework 4')
+hw5 = Homework.find_by(title: 'Homework 5')
+hw6 = Homework.find_by(title: 'Homework 6')
+hw7 = Homework.find_by(title: 'Homework 7')
+hw8 = Homework.find_by(title: 'Homework 8')
+hw9 = Homework.find_by(title: 'Homework 9')
+hw10 = Homework.find_by(title: 'Homework 10')
+
 StudentHomework.create([
-	{student_id: User.find_by(username: 'mjmontero').id, homework_id: Homework.find_by(title: 'Homework 1').id},
-	{student_id: User.find_by(username: 'mjmontero').id, homework_id: Homework.find_by(title: 'Homework 3').id},
-	{student_id: User.find_by(username: 'mjmontero').id, homework_id: Homework.find_by(title: 'Homework 4').id},
-	{student_id: User.find_by(username: 'mjmontero').id, homework_id: Homework.find_by(title: 'Homework 5').id},
-	{student_id: User.find_by(username: 'mjmontero').id, homework_id: Homework.find_by(title: 'Homework 10').id},
-	{student_id: User.find_by(username: 'student').id, homework_id: Homework.find_by(title: 'Homework 1').id},
-	{student_id: User.find_by(username: 'student').id, homework_id: Homework.find_by(title: 'Homework 3').id},
-	{student_id: User.find_by(username: 'student').id, homework_id: Homework.find_by(title: 'Homework 4').id},
-	{student_id: User.find_by(username: 'student').id, homework_id: Homework.find_by(title: 'Homework 8').id},
-	{student_id: User.find_by(username: 'student').id, homework_id: Homework.find_by(title: 'Homework 9').id},
+	{student_id: user_mj.id, homework_id: hw1.id},
+	{student_id: user_mj.id, homework_id: hw3.id},
+	{student_id: user_mj.id, homework_id: hw4.id},
+	{student_id: user_mj.id, homework_id: hw5.id},
+	{student_id: user_mj.id, homework_id: hw10.id},
+	{student_id: user_student.id, homework_id: hw1.id},
+	{student_id: user_student.id, homework_id: hw3.id},
+	{student_id: user_student.id, homework_id: hw4.id},
+	{student_id: user_student.id, homework_id: hw8.id},
+	{student_id: user_student.id, homework_id: hw9.id},
+	])
+
+
+Answer.create([
+	{student_id: user_mj.id, homework_id: hw1.id, answer: 'mj answer 1 for homework 1', submission_date: DateTime.yesterday},
+	{student_id: user_student.id, homework_id: hw1.id, answer: 'student answer 1 for homework 1', submission_date: DateTime.yesterday},
+	{student_id: user_mj.id, homework_id: hw1.id, answer: 'mj answer 2 for homework 1', submission_date: DateTime.now},
+	{student_id: user_student.id, homework_id: hw1.id, answer: 'student answer 2 for homework 1', submission_date: DateTime.now},
+
+	{student_id: user_mj.id, homework_id: hw3.id, answer: 'mj answer 1 for homework 3', submission_date: Date.yesterday},
+	{student_id: user_mj.id, homework_id: hw4.id, answer: 'mj answer 1 for homework 4', submission_date: Date.yesterday},
+	{student_id: user_mj.id, homework_id: hw5.id, answer: 'mj answer 1 for homework 5', submission_date: Date.yesterday},
+	{student_id: user_mj.id, homework_id: hw10.id, answer: 'mj answer 1 for homework 10', submission_date: Date.yesterday},
+
+	{student_id: user_student.id, homework_id: hw3.id, answer: 'mj answer 1 for homework 3', submission_date: Date.yesterday},
+	{student_id: user_student.id, homework_id: hw4.id, answer: 'mj answer 1 for homework 4', submission_date: Date.yesterday},
+	{student_id: user_student.id, homework_id: hw8.id, answer: 'mj answer 1 for homework 8', submission_date: Date.yesterday},
+	{student_id: user_student.id, homework_id: hw9.id, answer: 'mj answer 1 for homework 9', submission_date: Date.yesterday},
+
+	{student_id: user_student.id, homework_id: hw4.id, answer: 'student answer 2 for homework 4', submission_date: DateTime.now},
+	{student_id: user_mj.id, homework_id: hw4.id, answer: 'mj answer 2 for homework 4', submission_date: DateTime.now},
+
+
 	])
