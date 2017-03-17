@@ -1,12 +1,19 @@
-<%= content_tag :div, class: 'page-header' do %>
-  <%= content_tag :h1 do %>
-    Login
-  <% end %>
-<% end %>
+<section class="login_content">
 
-<%= form_tag session_url do %>
-  <div class="form-group form-group-lg">
-    <%= text_field_tag :username, '', class: 'form-control', placeholder: 'Username' %>
-  </div>
-  <button type="submit" class="btn btn-primary">Log In</button>
-<% end %>
+<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+
+	<%= form_tag session_url do %>
+	  <div class="form-group form-group-lg">
+	    <%= text_field_tag :username, '', class: 'form-control', placeholder: 'Username' %>
+	  </div>
+
+    <div class="actions">
+    	<button type="submit" class="btn btn-default submit">Log In</button>
+    </div>
+
+
+
+  <% end %>
+

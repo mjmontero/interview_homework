@@ -14,4 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require nicescroll/jquery.nicescroll.min.js
+
+//= require moment/moment.min.js
+//= require jquery.dataTables
+
+
 //= require_tree .
+

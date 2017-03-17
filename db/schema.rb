@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529213510) do
+ActiveRecord::Schema.define(version: 20170316155700) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "homework_id"
+    t.string   "answer"
+    t.datetime "submission_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "homeworks", force: :cascade do |t|
+    t.string   "title"
+    t.string   "question"
+    t.datetime "due_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "student_homeworks", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "homework_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",   null: false

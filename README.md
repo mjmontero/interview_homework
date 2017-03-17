@@ -11,15 +11,28 @@ To set up the database, run
 ```console```
 bundle install
 rake db:reset
+rake db:seed
 ```
 
-This will set up the database and it also create 2 users: 'teacher' and 'student'.
+This will set up the database and it also create 3 users: 'teacher', 'student' and 'mjmontero'
+
+student will have assigned homeworks 1,3,4,8,9
+mjmontero will have assigned homeworks 1,3,4,5,10
+homeworks 1,3,5 are already expired
+
+Teachers have access to all homeworks, they can view latest submissions and submission versions
+
+The application is using bootstrap Gentelella Alela! free admin template to create a simple UI
 
 To start the web server, run
 
 ```console```
 bundle exec rails server
 ```
+
+# To Run RSpecs
+
+rspec spec
 
 Open your web browser and go to http://localhost:3000
 

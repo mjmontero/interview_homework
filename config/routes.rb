@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :student_homeworks
+  resources :homeworks
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
